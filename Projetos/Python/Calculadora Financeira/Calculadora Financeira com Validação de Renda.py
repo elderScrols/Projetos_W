@@ -1,9 +1,12 @@
 # Função para obter renda
+def inicio():
+    print("Sua renda mensal deve ser no mínimo R$1320.00 e no máximo R$10000.00")
+
 def obter_renda():
     while True:
-        rd = input("Escreva sua renda: R$")
-        if v_renda(rd):
-            return float(rd)
+        renda = input("Escreva sua renda: R$")
+        if v_renda(renda):
+            return float(renda)
 
 # Função de validar renda
 def v_renda(renda):
@@ -29,6 +32,7 @@ def v_renda(renda):
 # Função de calcular empréstimo
 def calcular_emprestimo(renda):
     if renda:
+        print("O valor da taxa é 8%(taxa de juros anual)")
         valor_emprestimo = float(input("Digite o valor do empréstimo desejado: "))
         prazo_meses = int(input("Digite o prazo em meses: "))
 
@@ -51,9 +55,9 @@ def calcular_emprestimo(renda):
 def obter_nome():
     try:
         while True:
-            us = input("Insira seu nome: ")
-            if v_nome(us):
-                return us
+            user = input("Insira seu nome: ")
+            if v_nome(user):
+                return user
     except ValueError:
         print("Erro no dado inserido!!")
 
@@ -71,8 +75,10 @@ def v_nome(nome):
 
 # Função impirir
 def imprimir(nome, renda):
-    print("Caro/Cara "+ nome +f" sua renda mensal é {renda:.2f}")
+    print("Caro/Cara "+ nome +f" sua renda mensal é de R${renda:.2f}")
 
+# ínicio
+inicio()
 
 # Obtém o nome do usuário
 nome_usuario = obter_nome()
