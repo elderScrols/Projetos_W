@@ -37,6 +37,22 @@
 		<input type="text" name="cor_modelo"  value="<?php print $row_1->cor_modelo; ?>"  class="form-control">
 	</div>
 	<div class="mb-3">
+    <label>Armazenamento</label>
+    <select name="armazenamento_modelo" class="form-control">
+        <?php
+        $opcoes_armazenamento = [
+            "500 GB" => "500 GB",
+            "1 TB" => "1 TB"
+        ];
+
+        foreach ($opcoes_armazenamento as $valor => $texto) {
+            $selected = ($row_1->armazenamento_modelo == $valor) ? "selected" : "";
+            echo "<option value='$valor' $selected>$texto</option>";
+        }
+        ?>
+    </select>
+</div>
+	<div class="mb-3">
 		<button type="submit" class="btn btn-success">Enviar</button>
 	</div>
 </form>

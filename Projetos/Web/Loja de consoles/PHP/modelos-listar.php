@@ -14,6 +14,7 @@
         print "<th>Marca</th>";
         print "<th>Modelo</th>";
         print "<th>Cor</th>";
+        print "<th>Armazenamento</th>";
         print "<th>Ações</th>";
         print "</tr>";
         while($row = $res->fetch_object()){
@@ -22,6 +23,7 @@
             print "<td>".$row->nome_marca."</td>";
             print "<td>".$row->nome_modelo."</td>";
             print "<td>".$row->cor_modelo."</td>";
+            print "<td>".$row->armazenamento_modelo."</td>";
             print "<td>
                         <button onclick=\"location.href='?page=modelos-editar&id_modelo=".$row->id_modelo."'\" class='btn btn-primary'>Editar</button>
                         <button onclick=\"if(confirm('Tem certeza que desaja excluir?')){location.href='?page=modelos-salvar&acao=excluir&id_modelo=".$row->id_modelo."'}else{false}\"  class='btn btn-danger'>Excluir</button>

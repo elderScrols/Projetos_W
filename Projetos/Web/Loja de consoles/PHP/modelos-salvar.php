@@ -4,13 +4,16 @@
 			$sql = "INSERT INTO modelo (
 						marca_id_marca,
 						nome_modelo,
-						cor_modelo
+						cor_modelo,
+						armazenamento_modelo
 					
 					) VALUES (
 						".$_POST["marca_id_marca"].",
 						'".$_POST["nome_modelo"]."',
-						'".$_POST["cor_modelo"]."'
+						'".$_POST["cor_modelo"]."',
+						'".$_POST["armazenamento_modelo"]."'
 					)";
+					
 					$res = $conn->query($sql);
 
 					if ($res==true) {
@@ -21,13 +24,15 @@
 						print "<script>location.href='?page=modelos-listar'</script>";
 					}
 					break;
-		case 'editar':
-			$sql = "UPDATE modelo SET 
-						marca_id_marca=".$_POST['marca_id_marca'].",
-						nome_modelo='".$_POST['nome_modelo']."',
-						cor_modelo='".$_POST['cor_modelo']."'
-					WHERE
-						id_modelo=".$_POST['id_modelo'];
+					case 'editar':
+						$sql = "UPDATE modelo SET 
+									marca_id_marca=" . $_POST['marca_id_marca'] . ",
+									nome_modelo='" . $_POST['nome_modelo'] . "',
+									cor_modelo='" . $_POST['cor_modelo'] . "',
+									armazenamento_modelo='" . $_POST['armazenamento_modelo'] . "'
+								WHERE
+									id_modelo=" . $_POST['id_modelo'];
+					
 
 			$res = $conn->query($sql);
 
